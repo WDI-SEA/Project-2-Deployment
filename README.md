@@ -163,7 +163,89 @@ psql=# CREATE TABLE IF NOT EXISTS ... ... ...
 
 ```
 
+Once you have created all your tables, your database should be all set! The last step we need to do is set our environment variables, connect to our database, and deploy our project.
+
+Back in our main application, modify your **models/index.js** with the following code for lines 1-20:
+
+```
+
+'use strict';
+
+const fs = require('fs');
+const path = require('path');
+const Sequelize = require('sequelize');
+const basename = path.basename(__filename);
+require('dotenv').config()
+const config = {
+  "production": {
+    "database": process.env.DATABASE,
+    "host": process.env.DATABASE_HOST,
+    "username": process.env.DATABASE_USERNAME,
+    "password": process.env.DATABASE_PASSWORD,
+    "dialect": "postgres",
+    "port": process.env.DATABASE_PORT
+  }
+}
+const db = {};
+
+```
+
 To ensure our deployment executes sucessfully, we need to make sure that our PORT matches the port in the fly.toml file, and that our ENV (environment) variables are properly set.
+
+We now need to update our .env file to include the ENV variables to connect to our database. **Please refer to the screenshot you took of your postgres credentials and use your credentials to connect to your database** This is an example of what your .env should look like: 
+
+```
+
+...your previous ENV variables
+PORT=8080
+SECRET=your-secret
+DATABASE=pokedex_review
+DATABASE_HOST=bh-pokedex-p2-db.internal
+DATABASE_USERNAME=postgres
+DATABASE_PASSWORD=MaTSKZH1RmxF8y3
+DATABASE_PORT=5432
+
+```
+
+Finally, ensure that your PORT in your main index.js file is configured to use your env port or port 8080 (Or whichever port your fly.toml file is configured to):
+
+**index.js**
+```
+
+const PORT = process.env.PORT || 8080
+
+app.listen(PORT, ()=>{
+    console.log('Project 2 Express Authentication')
+})
+
+```
+
+
+Finally, we can transfer our environment variables to our fly.io application using the following command:
+
+```
+
+flyctl secrets import < .env
+
+```
+
+And you can double check that your ENV variables have been transferred to your application by visiting your application UI via the fly.io dashboard, and accessing the secrets section in the menu.
+
+We are now ready to deploy. Run the following command in your terminal to officially deploy your application online!
+
+```
+
+flyctl deploy 
+
+```
+
+Visit your fly.io dashboard and click on your application host to open the link.
+
+And Congratulations!
+
+
+
+
 
 
 
