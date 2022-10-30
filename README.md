@@ -70,7 +70,7 @@ You should receive a message in the terminal that says: **successfully logged in
 
 Now that we have signed up and logged into our fly.io account, we can begin the deployment process. Please ensure that you are in the correct project directory and disabled any running VPN's on your computer. 
 
-We begin by running the following command in the terminal:
+Run the following command in the terminal:
 ```
 
 flyctl launch
@@ -85,7 +85,7 @@ Finally, the CLI will ask if you need to set up a Postgresql database. Type N (n
 
 We will set up our postgres database separately afterwards.
 
-You will then be asked if you want to deploy your project now, type no. We need to make a few adjustments before we deploy. 
+You will then be asked if you want to deploy your project now, type N (no). We need to make a few adjustments before we deploy. 
 
 #### Our Database
 
