@@ -155,7 +155,7 @@ CREATE TABLE IF NOT EXISTS public.users
 
 ```
 
-Once your SQL command is ready, run it in your fly.io psql shell to apply them to your 
+Once your SQL command is ready, run it in your fly.io psql shell to apply them to your fly.io postgres DB.
 
 ```
 
