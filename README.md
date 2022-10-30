@@ -133,7 +133,13 @@ psql=# CREATE DATABASE pokedex_review;
 
 ```
 
-The User table is provided below:
+Next is to create the tables. The id for each of your tables should be **id SERIAL**
+
+The SQL for your table can be found in the SQL tab of pgAdmin when you click on the table name under Databases--->Your Database--->Schemas--->Tables---> Your Table (ex. Users)
+
+Please remove the DEFAULT and COLLATE commands from the SQL when you insert into your fly database, as well as the last 3 lines (Tablespace.. .. Alter table...)
+
+The User table is provided below (please also use as an example for your other tables):
 
 ```
 
@@ -148,12 +154,6 @@ CREATE TABLE IF NOT EXISTS public.users
 );
 
 ```
-
-The id for each of your tables should be **id SERIAL**
-
-The SQL for your table can be found in the SQL tab of pgAdmin when you click on the table name under Databases-->Your Database--->Schemas--->Tables---> Your Table (ex. Users)
-
-Please remove the DEFAULT and COLLATE commands from the SQL when you insert into your fly database, as well as the last 3 lines (Tablespace.. .. Alter table...)
 
 Once your SQL command is ready, run it in your fly.io psql shell to apply them to your 
 
