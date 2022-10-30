@@ -149,7 +149,7 @@ CREATE TABLE IF NOT EXISTS public.users
 
 ```
 
-The id for each of your tables should be **id Serial**
+The id for each of your tables should be **id SERIAL**
 
 The SQL for your table can be found in the SQL tab of pgAdmin when you click on the table name under Databases-->Your Database--->Schemas--->Tables---> Your Table (ex. Users)
 
