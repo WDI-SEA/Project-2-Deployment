@@ -103,7 +103,7 @@ Provide an app-name for your project, and select the region closest to you.
 
 Select Development, Single node, 1x shared CPU, 256MB RAM, 1GB disk
 
-And once you are provided with your database credentials, **Please take a screenshot. These credentials are essential for you to be able to connect to your database, and you will not be able to access them in fly.io afterwards**
+Once you are provided with your database credentials, **Please take a screenshot. These credentials are essential for you to be able to connect to your database, and you will not be able to access them in fly.io afterwards**
 
 To access the psql shell for our Fly postgres DB, run the following command in your terminal: 
 
