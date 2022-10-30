@@ -103,7 +103,7 @@ Provide an app-name for your project, and select the region closest to you.
 
 Select Development, Single node, 1x shared CPU, 256MB RAM, 1GB disk
 
-And once you are provided with your database credentials, **Please take a screenshot. These credentials are essential for you to be able to conenct to your database, and you will not be able to access them in fly.io afterwards**
+And once you are provided with your database credentials, **Please take a screenshot. These credentials are essential for you to be able to connect to your database, and you will not be able to access them in fly.io afterwards**
 
 To access the psql shell for our Fly postgres DB, run the following command in your terminal: 
 
@@ -122,6 +122,44 @@ flyctl proxy 5432 -a <your-postgres-app-name>
 
 psql postgres://postgres:<password>@localhost:5432
 
+
+```
+
+Once inside the shell, we need to manually create our Postgres Tables. We begin by creating the Database for our project, for example: 
+
+```
+
+psql=# CREATE DATABASE pokedex_review;
+
+```
+
+The User table is provided below:
+
+```
+
+CREATE TABLE IF NOT EXISTS public.users
+(
+    id SERIAL,
+    email character varying(255),
+    password character varying(255),
+    "createdAt" timestamp with time zone NOT NULL,
+    "updatedAt" timestamp with time zone NOT NULL,
+    CONSTRAINT users_pkey PRIMARY KEY (id)
+);
+
+```
+
+The id for each of your tables should be **id Serial**
+
+The SQL for your table can be found in the SQL tab of pgAdmin when you click on the table name under Databases-->Your Database--->Schemas--->Tables---> Your Table (ex. Users)
+
+Please remove the DEFAULT and COLLATE commands from the SQL when you insert into your fly database, as well as the last 3 lines (Tablespace.. .. Alter table...)
+
+Once your SQL command is ready, run it in your fly.io psql shell to apply them to your 
+
+```
+
+psql=# CREATE TABLE IF NOT EXISTS ... ... ...
 
 ```
 
