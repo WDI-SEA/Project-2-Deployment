@@ -12,26 +12,41 @@ Run the following scripts to install the flyctl command line utility which we wi
 
 ### MacOS
 
-``` brew install flyctl ```
+``` 
+
+brew install flyctl 
+
+```
 
 ### Linux/WSL 
 
-``` curl -L https://fly.io/install.sh | sh ```
+``` 
+
+curl -L https://fly.io/install.sh | sh 
+
+```
 
 ### Windows
 
-``` iwr https://fly.io/install.ps1 -useb | iex
- ```
+``` 
+
+iwr https://fly.io/install.ps1 -useb | iex
+
+```
  
 <hr />
  
-### Sign UP 
+### Sign Up
  
 Once the flyctl command line utility is installed, we can signup/login to our account
 
 cd into your project directory and run the following command:
 
-``` flyctl auth signup ```
+``` 
+
+flyctl auth signup 
+
+```
 
 Once the browser window opens, click on **Sign Up with GitHub** and click on the green button to **Authorize Fly.io**
 
@@ -39,7 +54,11 @@ Once on the payment screen, click on the small message below the form that says 
 
 Back in your terminal, sign into your fly account by running the following command:
 
-``` flyctl auth login ```
+``` 
+
+flyctl auth login 
+
+```
 
 
 
